@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	#success-msg{
+		color: green;
+		font-weight: bold;
+		font-size: 24px;
+		
+	}
+</style>
+</head>
+<body>
+	<h1>Add locations here</h1>
+	
+<!--	<div th:if="${session.msg}">
+		<h5 class="text-center text-success" th:text="${session.msg}"></h5>
+		<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+	</div>-->
+	<div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}" id="success-msg"></div>
+
+	<form th:action="@{/save_locations}" method="post">
+
+		<div class="mb-3">
+			<label class="form-label">Enter location Name </label> <input
+				type="text" class="form-control" id="placeName"
+				aria-describedby="emailHelp" name="placeName" required>
+		</div>
+
+		<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label">Enter
+				Description </label> <input type="text" class="form-control" id="placeDesc"
+				aria-describedby="emailHelp" name="placeDesc">
+		</div>
+
+		<button type="submit" class="btn btn-primary">Add</button>
+
+	</form>
+
+
+
+
+</body>
+</html>
